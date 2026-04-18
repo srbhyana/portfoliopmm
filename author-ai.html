@@ -616,5 +616,11 @@ document.querySelectorAll('section, .agent, .proof-card, .mf, .gpt, .ban-file, .
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{rootMargin:'-8% 0px -8% 0px',threshold:.05});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
+
+<!-- Vercel Speed Insights -->
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
