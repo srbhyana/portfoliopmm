@@ -1,0 +1,23 @@
+{
+  "name": "portfoliopmm",
+  "version": "1.0.0",
+  "description": "Product Marketing Portfolio - Simran Raj Bhyana",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srbhyana/portfoliopmm.git"
+  },
+  "keywords": ["portfolio", "product-marketing", "pmm"],
+  "author": "Simran Raj Bhyana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srbhyana/portfoliopmm/issues"
+  },
+  "homepage": "https://github.com/srbhyana/portfoliopmm#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
