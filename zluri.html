@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="b2b">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Zluri , B2B · Simran Raj Bhyana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&family=JetBrains+Mono:wght@400;500&family=Syne:wght@400;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{--gold:#c8a96e;--gold2:#e8c87a;
+  --bg:#060a18;--bg2:#0a1022;--surf:#0e1830;
+  --text:#dce8ff;--mute:rgba(220,232,255,.52);
+  --border:rgba(130,170,255,.12);--border2:rgba(200,169,110,.22);
+  --ease:cubic-bezier(.16,1,.3,1);
+  --font-sans:'Inter',sans-serif;--font-disp:'Syne',sans-serif;--font-mono:'JetBrains Mono',monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--gold);color:#000}
+a{color:inherit;text-decoration:none}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 52px;background:rgba(6,10,24,.72);backdrop-filter:blur(20px) saturate(140%);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--font-disp);font-size:17px;font-weight:800;letter-spacing:-.02em}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(220,232,255,.62);transition:color .25s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s var(--ease)}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{font-size:12px;padding:9px 22px;border:1px solid var(--border2);border-radius:100px;color:var(--gold);background:rgba(200,169,110,.04);backdrop-filter:blur(12px)}
+.nav-cta:hover{background:var(--gold);color:#000}
+
+.back{position:fixed;top:90px;left:52px;z-index:50;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);transition:color .25s}
+.back:hover{color:var(--gold)}
+
+.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:flex-end;padding:180px 52px 80px;max-width:1280px;margin:0 auto;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 55% at 80% 20%,rgba(80,180,160,.18),transparent 70%),radial-gradient(ellipse 30% 40% at 5% 85%,rgba(200,169,110,.06),transparent 60%)}
+.meta-row{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:28px;font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--mute);position:relative}
+.meta-row .dot{color:var(--gold)}
+.meta-row b{color:var(--gold);font-weight:500}
+h1{font-family:var(--font-disp);font-size:clamp(48px,7.2vw,100px);font-weight:800;line-height:.95;letter-spacing:-.035em;margin-bottom:32px;position:relative}
+h1 em{font-style:italic;font-weight:400;color:var(--gold)}
+.hero-sub{font-size:19px;color:var(--mute);max-width:760px;line-height:1.65;margin-bottom:48px;position:relative}
+.stats{display:flex;gap:48px;flex-wrap:wrap;padding-top:32px;border-top:1px solid var(--border);position:relative}
+.stat b{display:block;font-family:var(--font-disp);font-size:30px;font-weight:800;letter-spacing:-.02em;color:var(--text);line-height:1;margin-bottom:6px}
+.stat b em{font-style:italic;color:var(--gold);font-weight:400}
+.stat span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+
+section{padding:110px 52px;max-width:1280px;margin:0 auto}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:24px;margin-bottom:48px;border-bottom:1px solid var(--border)}
+.sec-num{font-family:var(--font-disp);font-size:12px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase}
+h2{font-family:var(--font-disp);font-size:clamp(34px,4.8vw,58px);font-weight:700;letter-spacing:-.02em;line-height:1.05}
+h2 em{font-style:italic;font-weight:400;color:var(--gold)}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.two-col h3{font-family:var(--font-disp);font-size:22px;font-weight:700;margin-bottom:16px;letter-spacing:-.01em;color:var(--gold)}
+.two-col p{font-size:15.5px;color:rgba(220,232,255,.78);margin-bottom:16px;line-height:1.75}
+.two-col p b{color:var(--text);font-weight:500}
+
+.pull{font-family:var(--font-disp);font-size:clamp(28px,3.6vw,48px);font-weight:400;font-style:italic;line-height:1.2;letter-spacing:-.015em;max-width:1040px;margin:0 auto;text-align:center;padding:60px 0}
+.pull span{color:var(--gold)}
+.pull::before,.pull::after{content:'"';color:var(--gold)}
+.pull::before{margin-right:4px}.pull::after{margin-left:4px}
+
+.positioning-card{padding:48px 52px;border:1px solid var(--border2);border-radius:16px;background:linear-gradient(135deg,rgba(200,169,110,.06),rgba(10,16,34,.3));backdrop-filter:blur(20px);text-align:center}
+.positioning-card .lbl{font-family:var(--font-mono);font-size:11px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+.positioning-card .stmt{font-family:var(--font-disp);font-size:clamp(22px,2.4vw,30px);font-weight:400;font-style:italic;line-height:1.35;max-width:840px;margin:0 auto;letter-spacing:-.01em}
+.positioning-card .stmt b{font-weight:700;font-style:normal;color:var(--gold)}
+
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pillar{padding:34px 32px;border:1px solid var(--border);border-radius:14px;background:linear-gradient(135deg,rgba(22,38,72,.5),rgba(10,16,34,.3));backdrop-filter:blur(14px);transition:all .35s var(--ease);box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+.pillar:hover{border-color:var(--border2);transform:translateY(-4px)}
+.pillar .num{font-family:var(--font-disp);font-size:42px;font-weight:800;color:var(--gold);opacity:.35;line-height:1;margin-bottom:14px}
+.pillar h4{font-family:var(--font-disp);font-size:22px;font-weight:700;margin-bottom:12px;letter-spacing:-.01em}
+.pillar p{font-size:14px;color:rgba(220,232,255,.74);line-height:1.65;margin-bottom:10px}
+.pillar .proof{font-family:var(--font-mono);font-size:11.5px;color:var(--gold);letter-spacing:.08em;margin-top:14px;padding-top:14px;border-top:1px dashed var(--border)}
+
+.comp{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:24px}
+.comp-card{padding:30px 34px;border:1px solid var(--border);border-radius:12px;background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(255,255,255,.008))}
+.comp-card b{display:block;font-family:var(--font-disp);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.comp-card ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+.comp-card li{font-size:13px;padding:8px 14px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:100px;color:rgba(220,232,255,.82);font-family:var(--font-mono);letter-spacing:.02em}
+
+.icp-card{padding:40px 44px;border:1px solid var(--border2);border-radius:14px;background:linear-gradient(135deg,rgba(22,38,72,.5),rgba(10,16,34,.3));backdrop-filter:blur(14px)}
+.icp-card .lbl{font-family:var(--font-mono);font-size:11px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
+.icp-card h3{font-family:var(--font-disp);font-size:28px;font-weight:700;margin-bottom:12px;letter-spacing:-.015em}
+.icp-card p{font-size:15px;color:rgba(220,232,255,.8);line-height:1.7;max-width:840px}
+.icp-card .specs{display:flex;gap:28px;flex-wrap:wrap;margin-top:24px;padding-top:24px;border-top:1px dashed var(--border)}
+.icp-card .spec b{display:block;font-family:var(--font-disp);font-size:20px;color:var(--gold);font-weight:700;margin-bottom:4px}
+.icp-card .spec span{font-size:11px;letter-spacing:.2em;color:var(--mute);text-transform:uppercase}
+
+.deliverables{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.del{padding:22px 26px;border:1px solid var(--border);border-radius:10px;background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(255,255,255,.008));backdrop-filter:blur(14px)}
+.del b{display:block;font-family:var(--font-disp);font-size:13px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.del p{font-size:14px;color:rgba(220,232,255,.78);line-height:1.6}
+
+.pagenav{position:static!important;top:auto!important;z-index:auto!important;background:transparent!important;backdrop-filter:none!important;border-bottom:none!important;padding:60px 52px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);max-width:1280px;margin:60px auto 0;flex-wrap:wrap;gap:20px}
+.pagenav a{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--mute);transition:color .25s}
+.pagenav a:hover{color:var(--gold)}
+.pagenav a.prim{color:var(--gold);border:1px solid var(--border2);padding:14px 28px;border-radius:100px;background:rgba(200,169,110,.04)}
+.pagenav a.prim:hover{background:var(--gold);color:#000}
+.brand-watermark{position:absolute;top:90px;right:-60px;width:clamp(340px,40vw,560px);pointer-events:none;z-index:0;opacity:.09;filter:grayscale(100%) brightness(1.8) contrast(.85);mix-blend-mode:screen;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 72%);-webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 72%)}
+.brand-chip{display:inline-flex;align-items:center;gap:12px;padding:6px 16px 6px 6px;border:1px solid var(--border2);border-radius:100px;background:rgba(200,169,110,.05);backdrop-filter:blur(12px);margin-bottom:24px;position:relative;z-index:2}
+.brand-chip img{height:28px;width:28px;border-radius:50%;object-fit:cover;border:1px solid var(--border2);background:#fff}
+.brand-chip span{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500}
+footer{padding:40px 52px;border-top:1px solid var(--border);text-align:center;color:var(--mute);font-size:12px;letter-spacing:.08em}
+footer a{color:var(--gold)}
+
+@media(max-width:900px){
+  nav{padding:16px 22px}.nav-links{display:none}
+  .back{left:22px;top:72px}
+  .hero{padding:140px 24px 60px}section{padding:70px 24px}
+  .two-col,.pillars,.comp,.deliverables{grid-template-columns:1fr;gap:20px}
+  .stats{gap:24px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Simran<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="author-ai.html">Author.AI</a></li>
+    <li><a href="index.html#contact">Connect</a></li>
+  </ul>
+  <a href="https://chatgpt.com/g/g-69517b4ef32481918f687dfdaffbfc55-simran-raj-bhyana-for-hire" target="_blank" class="nav-cta">Simran.GPT ↗</a>
+</nav>
+
+<a href="projects.html#ch-03" class="back">← B2B chapter</a>
+
+<header class="hero">
+  <img src="img/zluri-logo.png" alt="" class="brand-watermark" aria-hidden="true"/>
+  <div class="brand-chip"><img src="img/zluri-logo.png" alt=""/><span>Zluri</span></div>
+  <div class="meta-row">
+    <span>Case <b>10</b></span><span class="dot">·</span>
+    <span>B2B · SaaS</span><span class="dot">·</span>
+    <span>Zluri</span><span class="dot">·</span>
+    <span>SaaS Management Platform</span>
+  </div>
+  <h1>The SaaS stack,<br/><em>governed like one asset</em>.</h1>
+  <p class="hero-sub">Category framing for Zluri , SaaS management that doesn't pick a lane between discovery, governance and spend. Positioned against BetterCloud, Torii, Zylo, Productiv and Lumos by collapsing their three separate buys into one workflow and one buyer.</p>
+  <div class="stats">
+    <div class="stat"><b>3</b><span>Pillars · Visibility · Governance · Optimization</span></div>
+    <div class="stat"><b>50<em>+</em></b><span>SaaS tools · typical ICP stack</span></div>
+    <div class="stat"><b>200-5K</b><span>Employees · ICP band</span></div>
+    <div class="stat"><b>5</b><span>Named incumbents displaced</span></div>
+  </div>
+</header>
+
+<section>
+  <div class="sec-head">
+    <div><div class="sec-num">01 · Category frame</div><h2>Three tools, <em>one problem</em></h2></div>
+  </div>
+  <div class="two-col">
+    <div>
+      <h3>What IT actually buys today</h3>
+      <p>The modern SaaS management stack is itself fragmented. IT buys discovery (BetterCloud, Torii), finance buys spend (Zylo, Lumos), HR-ops buys access (Productiv). Three contracts, three dashboards, three procurement cycles , all pointed at the same underlying sprawl.</p>
+      <p><b>The ironic bit</b> , the tools meant to tame SaaS sprawl become SaaS sprawl.</p>
+    </div>
+    <div>
+      <h3>Where Zluri wins</h3>
+      <p>Zluri's wedge is refusing the split. Visibility, governance and optimization in one spine , one buyer signs once, one workflow runs the full lifecycle from request to renewal.</p>
+      <p><b>Category positioning</b> , SaaS Management as an <em>operating layer</em>, not a budget-line product. Changes who signs the cheque (CIO, not line-item IT manager) and what the contract is worth.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div><div class="sec-num">02 · Positioning</div><h2>The <em>one line</em></h2></div>
+  </div>
+  <div class="positioning-card">
+    <div class="lbl">Positioning thesis</div>
+    <div class="stmt">Zluri is the <b>SaaS operating layer</b> for IT , one spine for visibility, governance and optimization, so the stack is <b>one asset on your books</b>, not fifty disconnected invoices.</div>
+  </div>
+</section>
+
+<div class="pull">The tools that were meant to tame SaaS sprawl <span>became SaaS sprawl</span>.</div>
+
+<section>
+  <div class="sec-head">
+    <div><div class="sec-num">03 · Pillars</div><h2>Three <em>lanes</em>, one platform</h2></div>
+  </div>
+  <div class="pillars">
+    <div class="pillar">
+      <div class="num">01</div>
+      <h4>Visibility</h4>
+      <p>Every SaaS app, every seat, every shadow-IT tool. Discovered through finance data, SSO, browser signal , not just API connectors. The ground truth of what's actually running.</p>
+      <div class="proof">Proof: shadow-IT apps surfaced in D1</div>
+    </div>
+    <div class="pillar">
+      <div class="num">02</div>
+      <h4>Governance</h4>
+      <p>Access requests, reviews, offboarding , all in the same workflow. Audit-ready by default, SOC 2 / ISO baked in. Every permission change is a log entry, not a ticket.</p>
+      <div class="proof">Proof: offboarding time ≤ 5 min</div>
+    </div>
+    <div class="pillar">
+      <div class="num">03</div>
+      <h4>Optimization</h4>
+      <p>Renewal calendar, usage-based right-sizing, negotiation intelligence. The CFO gets the line-item story; IT gets the decision, without a second tool or a second procurement cycle.</p>
+      <div class="proof">Proof: 20-30% stack-spend cut</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div><div class="sec-num">04 · ICP</div><h2>Who <em>buys</em></h2></div>
+  </div>
+  <div class="icp-card">
+    <div class="lbl">Ideal customer profile</div>
+    <h3>Mid-market IT orgs, 200-5,000 employees</h3>
+    <p>Running 50+ SaaS apps, growing headcount quarterly, with a CIO or Head of IT on the hook for both audit readiness and stack efficiency. Finance is watching SaaS spend line-by-line; security is watching access reviews; HR-ops is watching onboarding/offboarding SLAs. Zluri is the one vendor who speaks to all three without forcing a workflow split.</p>
+    <div class="specs">
+      <div class="spec"><b>CIO / Head of IT</b><span>Economic buyer</span></div>
+      <div class="spec"><b>IT Ops lead</b><span>Champion</span></div>
+      <div class="spec"><b>CFO</b><span>Co-sign on renewal</span></div>
+      <div class="spec"><b>CISO</b><span>Security sign-off</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div><div class="sec-num">05 · Competitive</div><h2>The <em>lanes we break</em></h2></div>
+  </div>
+  <div class="comp">
+    <div class="comp-card"><b>Discovery-led · ITAM</b>
+      <ul>
+        <li>BetterCloud</li>
+        <li>Torii</li>
+      </ul>
+    </div>
+    <div class="comp-card"><b>Spend-led · FinOps</b>
+      <ul>
+        <li>Zylo</li>
+        <li>Lumos</li>
+        <li>Productiv</li>
+      </ul>
+    </div>
+  </div>
+  <div class="two-col" style="margin-top:40px">
+    <div>
+      <h3>Where they win</h3>
+      <p>Discovery-led vendors own the IT conversation. FinOps vendors own finance. Each has a deep moat inside their lane , dashboards, integrations, buyer-specific proof.</p>
+    </div>
+    <div>
+      <h3>Where the lane breaks</h3>
+      <p>The customer problem isn't lane-shaped. A renewal decision needs usage data (FinOps) <em>and</em> access data (ITAM). Buying two platforms that don't talk makes the renewal worse, not better. Zluri's wedge is refusing the split.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div><div class="sec-num">06 · Shipped</div><h2>What the exercise <em>produced</em></h2></div>
+  </div>
+  <div class="deliverables">
+    <div class="del"><b>Category positioning</b><p>SaaS management as an operating layer, not a point product. Expands the buyer from IT ops to CIO-level, changes the cheque size.</p></div>
+    <div class="del"><b>Three-pillar messaging</b><p>Visibility · Governance · Optimization , each with its own proof lane, so sales can qualify on whichever pain opens the door.</p></div>
+    <div class="del"><b>Competitive map</b><p>BetterCloud, Torii on one axis; Zylo, Productiv, Lumos on the other. Zluri defined by the refusal to pick.</p></div>
+    <div class="del"><b>ICP playbook</b><p>200-5K employee IT orgs with 50+ SaaS tools. Four-buyer-role map , CIO, IT ops, CFO, CISO , each with their own opening line.</p></div>
+  </div>
+</section>
+
+<nav class="pagenav">
+  <a href="writesonic.html">← Writesonic</a>
+  <a href="projects.html" class="prim">Back to Projects →</a>
+</nav>
+
+<footer>
+  © Simran Raj Bhyana · <a href="index.html">Home</a> · <a href="projects.html">Projects</a> · <a href="cv.html">CV</a>
+</footer>
+
+</body>
+</html>
